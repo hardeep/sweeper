@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TESTS IN YO FACE</title>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript">
+      var url = '';
+      var tmpl = '';
+      var max = 0;
+      function init() {
+        var resultsDiv = document.getElementById('results');
+        var socket = io.connect(url);
+        socket.on('result', function(result) {
+            var n = resultsDiv.childNodes.length;
+            if (n == 1) {
+                resultsDiv.removeChild(resultsDiv.childNodes[0]);
+            }
+            if (n >= max) {
+                resultsDiv.removeChild(resultsDiv.childNodes[n-1]);
+            }
+            resultsDiv.innerHTML = tmpl.split('{result}').join(JSON.stringify(result)) + resultsDiv.innerHTML;
+        });
+      } 
+    </script>
+  </head>
+  <body onload="init();">
+    <h1>TESTS BItCHEZ</h1>
+    <div id="results">
+      <!-- RESULTS -->
+    </div>
+  </body>
+</html>
