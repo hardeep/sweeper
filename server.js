@@ -22,8 +22,8 @@ app.configure('production', function(){
   app.use(express.errorHandler());
 });
 
-var host = 'http://localhost';
-var port = 3000;
+var host = 'http://sweeper.jit.su';
+var port = 80;
 
 // ----
 // ROUTES
@@ -69,5 +69,3 @@ app.get('/', function(req, res) {
 });
 
 app.listen(port);
-
-console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
