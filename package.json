@@ -1,0 +1,15 @@
+{
+  "name": "sweeper",
+  "subdomain": "sweeper",
+  "scripts": {
+    "start": "server.js"
+  },
+  "dependencies": {
+    "express": "2.5.2",
+    "mongoose": ""
+  },
+  "version": "0.0.0",
+  "engines": {
+    "node": "0.6.x"
+  }
+}
